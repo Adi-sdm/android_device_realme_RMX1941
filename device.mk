@@ -70,7 +70,11 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.a2dp@1.0 \
     android.hardware.bluetooth.a2dp@1.0.vendor \
     android.hardware.bluetooth@1.0.vendor \
-    libbtconfigstore 
+    libbtconfigstore
+
+# Call recording
+PRODUCT_PACKAGES += \
+    com.google.android.apps.dialer.call_recording_audio.features.xml
 
 # Camera
 PRODUCT_PACKAGES += \
