@@ -111,10 +111,11 @@ on charger
     start hwservicemanager
 
 service swap_enable_init /system/bin/sh /system/etc/swap_enable.sh
+service swap_enable /system/etc/swap_enable.sh
     user root
     disabled
     oneshot
-    seclabel u:r:rutilsdaemon:s0
+    seclabel u:r:swap_enable:s0
 
 on fs
     write /proc/bootprof "INIT:Mount_START"
