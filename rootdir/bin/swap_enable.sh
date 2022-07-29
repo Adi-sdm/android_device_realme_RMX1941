@@ -6,10 +6,10 @@ MemTotalStr=`cat /proc/meminfo | grep MemTotal`
 MemTotal=${MemTotalStr:16:8}
 
 if [ $MemTotal -le 2097152 ]; then
-  #config 1.41GB zram size with memory less than 2 GB
+  #config 2.00 GB zram size with memory less than 2 GB
   echo zstd > /sys/block/zram0/comp_algorithm
-  echo 1513975971 > /sys/block/zram0/disksize
-  echo 180 > /proc/sys/vm/swappiness
+  echo 2113975971 > /sys/block/zram0/disksize
+  echo 200 > /proc/sys/vm/swappiness
   echo 0 > /proc/sys/vm/direct_swappiness
   echo 10 > /proc/sys/vm/watermark_scale_factor
 elif [ $MemTotal -le 3145728 ]; then
